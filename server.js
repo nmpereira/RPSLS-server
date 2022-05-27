@@ -120,7 +120,7 @@ const winReason=(winChoice, loseChoice)=>{
 				return 'scissors decapitates lizard';
 			}
 		case 'lizard':
-			if (loseChoice === 'paper') { //missing anything?
+			if (loseChoice === 'paper') {
 				return 'lizard eats paper';
 			} else if (loseChoice ==='spock') {
 				return 'lizard poisons spock';
@@ -132,7 +132,7 @@ const winReason=(winChoice, loseChoice)=>{
 				return 'spock smashes scissors';
 			}
         default:  
-        return 'something broke';
+            return 'something broke';
 	}
 }
 
