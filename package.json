@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "figlet": "^1.5.2",
     "nodemon": "^2.0.16"
   }
 }
