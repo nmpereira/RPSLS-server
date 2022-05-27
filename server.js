@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
             
             // 
             let userPick=params['user'];
-            const random = Math.floor(Math.random() * 100)
+            const random = Math.ceil(Math.random() * 5)
             let result=picker(random);
             let winner=winnerWinner(userPick,result)
            let logic=''
@@ -67,19 +67,19 @@ const server = http.createServer((req, res) => {
 const picker = (random) => {
 	let result;
 	switch (true) {
-        case random < 20:
+        case random === 1:
             result = 'rock'; //🤨
             break;
-        case random < 40:
+        case random === 2:
             result = 'paper'; //📜
 			break;
-        case random < 60:
+        case random === 3:
             result = 'scissors'; //✂️
             break;
-        case random < 80:
+        case random === 4:
             result = 'lizard'; //🦎
             break;
-        case random < 100:
+        case random === 5:
             result = 'spock'; //👽
             break;
 }
