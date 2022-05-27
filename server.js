@@ -93,14 +93,14 @@ const winnerWinner=(userDinner,computerDinner) => {
     let winner;
         if (userDinner === computerDinner){
             winner = 'tie';   
-        }else if ((userDinner === 'rock' && computerDinner === ('scissors' || 'lizard')) ||  
-                 (userDinner === 'paper' && computerDinner === ('rock' || 'spock')) || 
-                 (userDinner === 'scissors' && computerDinner === ('paper' || 'lizard')) || 
-                 (userDinner === 'lizard' && computerDinner === ('paper' || 'spock')) || 
-                 (userDinner === 'spock' && computerDinner === ('rock' || 'scissors'))) {
-                     winner = 'user'    
+        }else if ((userDinner === 'rock'     && (computerDinner === 'scissors' || computerDinner === 'lizard'  ) ) ||  
+                  (userDinner === 'paper'    && (computerDinner === 'rock'     || computerDinner === 'spock'   ) ) || 
+                  (userDinner === 'scissors' && (computerDinner === 'paper'    || computerDinner === 'lizard'  ) ) || 
+                  (userDinner === 'lizard'   && (computerDinner === 'paper'    || computerDinner === 'spock'   ) ) || 
+                  (userDinner === 'spock'    && (computerDinner === 'rock'     || computerDinner === 'scissors') )) {
+            winner = 'user'    
         }else { 
-          winner = 'computer';
+            winner = 'computer';
         }
 
      //scissors beats paper & lizard
