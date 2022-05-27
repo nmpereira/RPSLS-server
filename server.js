@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const querystring = require('querystring');
+const figlet=require('figlet')
 
 const server = http.createServer((req, res) => {
 	const page = url.parse(req.url).pathname;
@@ -39,6 +40,8 @@ const server = http.createServer((req, res) => {
                 winner: winner,
                 logic:logic
             }
+
+        
         }else{
             response = {error:'please input your choice in the url as a query like ?user=paper'}
         }
@@ -46,6 +49,18 @@ const server = http.createServer((req, res) => {
 
         // 
 	}
+    if (page == '/error') {
+    figlet('ERROR 404', function (err, data) {
+        if (err) {
+        console.log('Something went wrong...')
+        console.dir(err)
+        return
+        }
+        res.write(data)
+        res.end()
+    })
+
+    }
 });
 // random (1,100)
 // Rock/Paper/Scissor/Lizard/Spock
@@ -135,6 +150,8 @@ const winReason=(winChoice, loseChoice)=>{
             return 'something broke';
 	}
 }
+
+
 
 
 
