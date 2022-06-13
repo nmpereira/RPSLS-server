@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body > * {
+    display: block;
+    margin: 50px auto;
+    width: 70%;
+}
+
+ body > h1{
+    color: #DD2476;
+}
+
+form h1{
+    color: #ff512f;
+}
+
+form button{
+    padding: 0px 10px;
+    margin-right: 10px;
+}

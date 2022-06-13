@@ -13,6 +13,15 @@ const server = http.createServer((req, res) => {
 			res.end();
 		});
 	}
+
+    if(page == '/css/style.css'){
+        fs.readFile('css/style.css', function(err, data) {
+            res.writeHead(200, {'Content-Type' : 'text/css'})
+            res.write(data)
+            res.end()
+        })
+    }
+
 	if (page == '/random') {
         const params = querystring.parse(url.parse(req.url).query);
         let response
@@ -155,4 +164,4 @@ const winReason=(winChoice, loseChoice)=>{
 
 
 
-server.listen(process.env.PORT||8000)
+server.listen(process.env.PORT||5000)
