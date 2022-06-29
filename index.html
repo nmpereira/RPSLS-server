@@ -5,35 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
 <body>
     <h1>Rock Paper Scissors Lizard Spock</h1>
-    <h2>Click a button below and see if you win in this biggest, bangiest version of Rock Paper Scissors!</h2> 
+    <p>Click a button below and see if you win in this biggest,<br>bangiest version of Rock Paper Scissors!</p> 
     <form>
-        <button id="rock" class='btn' type="button">🤨</button>
-        <button id="scissors" class='btn' type="button">✂️</button>
-        <button id="paper" class='btn' type="button">📜</button>
-        <button id="lizard" class='btn' type="button">🦎</button>
-        <button id="spock" class='btn' type="button">👽</button>
-        <h1 id="display"></h1>
+        <button id="rock" class='btn' type="button" onclick="document.getElementById('ticketModal').style.display='block'">🤨</button>
+        <button id="scissors" class='btn' type="button" onclick="document.getElementById('ticketModal').style.display='block'">✂️</button>
+        <button id="paper" class='btn' type="button" onclick="document.getElementById('ticketModal').style.display='block'">📜</button>
+        <button id="lizard" class='btn' type="button" onclick="document.getElementById('ticketModal').style.display='block'">🦎</button>
+        <button id="spock" class='btn' type="button" onclick="document.getElementById('ticketModal').style.display='block'">👽</button>
     </form>
-    <script>
+    
 
-        console.log('Instinc is the best!')
-        const display = document.querySelector('#display')
-        document.querySelector('form').addEventListener('click', async (e) => {
-            if(e.target.classList.contains('btn')) {
-                const id = e.target.getAttribute('id')
-                const raw = await fetch(`/random?user=${id}`)
-                let res = await raw.json()
-                display.textContent = `${res.logic}, ${res.winner} wins!`
-            }
-        })
-    </script>
+    <div id="ticketModal" class="ad-modal">
+        <div class="ad-modal-content ad-animate-top ad-card">
+          <header class="ad-container ad-teal ad-center ad-padding-32"> 
+            <h2 class="ad-wide" id="display"></h2>
+          </header>
+          <div class="ad-container">
+            <h4 id="display2"></h4>
+            <button class="ad-button ad-red ad-section" onclick="document.getElementById('ticketModal').style.display='none'">PLAY AGAIN</i></button>
+          </div>
+        </div>
+      </div>
+    <script src="js/main.js"></script>
 </body>
-
-
 
 </html>
