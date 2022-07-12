@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RPSLS</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-    <h2>Click a button below and see if you win in this biggest, bangiest version of Rock Paper Scissors!</h2> 
-    <form>
-        <button id="rock" class='btn' type="button">🤨</button>
-        <button id="scissors" class='btn' type="button">✂️</button>
-        <button id="paper" class='btn' type="button">📜</button>
-        <button id="lizard" class='btn' type="button">🦎</button>
-        <button id="spock" class='btn' type="button">👽</button>
-        <h1 id="display"></h1>
-    </form>
-    <script>
-
-        console.log('Instinc is the best!')
-        const display = document.querySelector('#display')
-        document.querySelector('form').addEventListener('click', async (e) => {
-            if(e.target.classList.contains('btn')) {
-                const id = e.target.getAttribute('id')
-                const raw = await fetch(`/random?user=${id}`)
-                let res = await raw.json()
-                display.textContent = `${res.logic}, ${res.winner} wins!`
-            }
-        })
-    </script>
-</body>
-
-
-
+    <body>
+        <h1>Rock Paper Scissors Lizard Spock</h1>
+        <h2>
+            Click a button below and see if you win in this biggest, bangiest
+            version of Rock Paper Scissors!
+        </h2>
+        <form>
+            <button id="rock" class="btn" type="button">🤨</button>
+            <button id="scissors" class="btn" type="button">✂️</button>
+            <button id="paper" class="btn" type="button">📜</button>
+            <button id="lizard" class="btn" type="button">🦎</button>
+            <button id="spock" class="btn" type="button">👽</button>
+            <h1 id="display"></h1>
+        </form>
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
 </html>
